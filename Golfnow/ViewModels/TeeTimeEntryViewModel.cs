@@ -26,7 +26,7 @@ namespace Golfnow.ViewModels
             var courseDescriptionBuilder = new StringBuilder(entry.Course.Tees.ToString() + " Tees");
             if (!String.IsNullOrEmpty(entry.Course.Description)) courseDescriptionBuilder.Append(" " + entry.Course.Description);
             CourseDescription = courseDescriptionBuilder.ToString();
-            if (DateTime.Now > entry.StartsAt) IsPast = false;
+            if (DateTime.Now > entry.StartsAt) IsPast = true;
         }
     }
 }
