@@ -14,24 +14,25 @@ namespace Golfnow
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TeeTimesList : ContentPage
     {
-        public ObservableCollection<TeeTimeEntryViewModel> Items { get; set; }
-
         public TeeTimesList()
         {
             InitializeComponent();
 
             // Test data
-            Items = new ObservableCollection<TeeTimeEntryViewModel>
+            var entries = new ObservableCollection<TeeTimeEntryViewModel>
             {
-                new TeeTimeEntryViewModel(new TeeTime(DateTime.Now, new Course(18))),
-                new TeeTimeEntryViewModel(new TeeTime(DateTime.Now, new Course(9, "Rehhütte")))
+                new TeeTimeEntryViewModel(new TeeTime(new DateTime(2021, 04, 25, 12, 30, 00), new Course(18))),
+                new TeeTimeEntryViewModel(new TeeTime(new DateTime(2021, 03, 13, 14, 00, 00), new Course(9, "Rehhütte"))),
+                new TeeTimeEntryViewModel(new TeeTime(new DateTime(2021, 04, 28, 10, 20, 00), new Course(18)))
             };
 
-            FutureTeeTimes.ItemsSource = Items;
-            FutureTeeTimesWrapper.HeightRequest = Items.Count * 70;
+            var futureEntries = entries.Where(t => t.IsPast == false);
+            FutureTeeTimes.ItemsSource = futureEntries;
+            FutureTeeTimesWrapper.HeightRequest = futureEntries.Count() * 60;
             
-            PastTeeTimes.ItemsSource = Items;
-            PastTeeTimesWrapper.HeightRequest = Items.Count * 70;
+            var pastEntries = entries.Where(t => t.IsPast);
+            PastTeeTimes.ItemsSource = pastEntries;
+            PastTeeTimesWrapper.HeightRequest = pastEntries.Count() * 60;
         }
 
         async void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
