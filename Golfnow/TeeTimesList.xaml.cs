@@ -20,6 +20,7 @@ namespace Golfnow
         {
             InitializeComponent();
 
+            // Test data
             Items = new ObservableCollection<TeeTimeEntryViewModel>
             {
                 new TeeTimeEntryViewModel(new TeeTime(DateTime.Now, new Course(18))),
