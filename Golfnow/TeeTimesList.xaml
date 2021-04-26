@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Golfnow.TeeTimesList"
+             BackgroundColor="#EFEFF4">
+    <StackLayout>
+        <Frame HorizontalOptions="FillAndExpand" BackgroundColor="#FFFFFF" HeightRequest="140" CornerRadius="0" HasShadow="False">
+            <Label Text="Check in" FontSize="34" FontAttributes="Bold" Margin="0,110,0,0"/>
+        </Frame>
+
+        <StackLayout Margin="0,14,0,0">
+            <Label FontSize="13" Text="FUTURE TEE TIMES" TextColor="#653C3C43" Margin="16,16,0,4"/>
+            <BoxView Color="#293C3C43" HorizontalOptions="FillAndExpand" HeightRequest="1"></BoxView>
+            <StackLayout x:Name="FutureTeeTimesWrapper">
+                <ListView VerticalOptions="FillAndExpand" BackgroundColor="#EFEFF4" x:Name="FutureTeeTimes" ItemsSource="{Binding Items}" ItemTapped="Handle_ItemTapped" CachingStrategy="RecycleElement" HasUnevenRows="True">
+                    <!-- View Cells -->
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell Height="60">
+                                <StackLayout Margin="16,6" Spacing="3">
+                                    <Label FontSize="17" Text="{Binding StartsAt}"/>
+                                    <Label FontSize="15" TextColor="#803C3C43" Text="{Binding Course.Tees}"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+        
+        <StackLayout>
+            <Label FontSize="13" Text="PAST TEE TIMES" TextColor="#653C3C43" Margin="16,14,0,4"/>
+            <BoxView Color="#293C3C43" HorizontalOptions="FillAndExpand" HeightRequest="1"></BoxView>
+            <StackLayout x:Name="PastTeeTimesWrapper">
+                <ListView VerticalOptions="FillAndExpand" BackgroundColor="#EFEFF4" x:Name="PastTeeTimes" ItemsSource="{Binding Items}" ItemTapped="Handle_ItemTapped" CachingStrategy="RecycleElement" HasUnevenRows="True">
+                    <!-- View Cells -->
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell Height="60">
+                                <StackLayout Margin="16,6" Spacing="3">
+                                    <Label FontSize="17" Text="{Binding StartsAt}"/>
+                                    <Label FontSize="15" TextColor="#803C3C43" Text="{Binding Course.Tees}"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
