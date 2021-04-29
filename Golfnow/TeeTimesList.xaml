@@ -9,17 +9,20 @@
         </Frame>
 
         <StackLayout Margin="0,14,0,0">
-            <Label FontSize="13" Text="FUTURE TEE TIMES" TextColor="#803C3C43" Margin="16,16,0,4"/>
+            <Label FontSize="13" Text="FUTURE TEE TIMES" TextColor="#603C3C43" Margin="16,16,0,4"/>
             <BoxView Color="#293C3C43" HorizontalOptions="FillAndExpand" HeightRequest="1"></BoxView>
             <StackLayout x:Name="FutureTeeTimesWrapper">
-                <ListView VerticalOptions="FillAndExpand" BackgroundColor="#EFEFF4" x:Name="FutureTeeTimes" ItemsSource="{Binding Items}" ItemTapped="Handle_ItemTapped" CachingStrategy="RecycleElement" HasUnevenRows="True">
+                <ListView VerticalOptions="FillAndExpand" BackgroundColor="#EFEFF4" x:Name="FutureTeeTimes" ItemsSource="{Binding Items}" HasUnevenRows="True">
                     <!-- View Cells -->
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell Height="60">
-                                <StackLayout Margin="16,6" Spacing="3">
-                                    <Label FontSize="17" Text="{Binding StartsAt}"/>
-                                    <Label FontSize="15" TextColor="#803C3C43" Text="{Binding CourseDescription}"/>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                    <StackLayout Margin="16,6" Spacing="3">
+                                        <Label FontSize="17" Text="{Binding StartsAt}"/>
+                                        <Label FontSize="15" TextColor="#603C3C43" Text="{Binding CourseDescription}"/>
+                                    </StackLayout>
+                                    <Label Text="" FontFamily="{StaticResource CustomFont}" FontSize="20" TextColor="#303C3C43" VerticalOptions="Center" HorizontalOptions="EndAndExpand" Margin="20,0"/>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>
@@ -29,17 +32,19 @@
         </StackLayout>
         
         <StackLayout>
-            <Label FontSize="13" Text="PAST TEE TIMES" TextColor="#803C3C43" Margin="16,25,0,4"/>
+            <Label FontSize="13" Text="PAST TEE TIMES" TextColor="#603C3C43" Margin="16,25,0,4"/>
             <BoxView Color="#293C3C43" HorizontalOptions="FillAndExpand" HeightRequest="1"></BoxView>
             <StackLayout x:Name="PastTeeTimesWrapper">
-                <ListView VerticalOptions="FillAndExpand" BackgroundColor="#EFEFF4" x:Name="PastTeeTimes" ItemsSource="{Binding Items}" ItemTapped="Handle_ItemTapped" CachingStrategy="RecycleElement" HasUnevenRows="True">
+                <ListView VerticalOptions="FillAndExpand" BackgroundColor="#EFEFF4" x:Name="PastTeeTimes" ItemsSource="{Binding Items}" HasUnevenRows="True">
                     <!-- View Cells -->
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell Height="60">
-                                <StackLayout Margin="16,6" Spacing="3">
-                                    <Label FontSize="17" Text="{Binding StartsAt}"/>
-                                    <Label FontSize="15" TextColor="#803C3C43" Text="{Binding CourseDescription}"/>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                    <StackLayout Margin="16,6" Spacing="3">
+                                        <Label FontSize="17" Text="{Binding StartsAt}"/>
+                                        <Label FontSize="15" TextColor="#603C3C43" Text="{Binding CourseDescription}"/>
+                                    </StackLayout>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

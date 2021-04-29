@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Collections;
+using System.Net.Http.Headers;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Golfnow.Entities;
@@ -23,7 +24,7 @@ namespace Golfnow
             {
                 new TeeTimeEntryViewModel(new TeeTime(new DateTime(2021, 04, 25, 12, 30, 00), new Course(18))),
                 new TeeTimeEntryViewModel(new TeeTime(new DateTime(2021, 03, 13, 14, 00, 00), new Course(9, "Rehhütte"))),
-                new TeeTimeEntryViewModel(new TeeTime(new DateTime(2021, 04, 28, 10, 20, 00), new Course(18)))
+                new TeeTimeEntryViewModel(new TeeTime(DateTime.Now.Add(new TimeSpan(2, 0, 0, 0)), new Course(18)))
             };
 
             var futureEntries = entries.Where(t => t.IsPast == false);

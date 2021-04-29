@@ -144,4 +144,7 @@
     <Folder Include="Assets.xcassets\logo.imageset\" />
     <Folder Include="Resources\" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\iconfont01.ttf" />
+  </ItemGroup>
 </Project>

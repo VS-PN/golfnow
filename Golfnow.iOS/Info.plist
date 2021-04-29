@@ -20,7 +20,7 @@
       <string>UIInterfaceOrientationLandscapeRight</string>
     </array>
     <key>MinimumOSVersion</key>
-    <string>14.0</string>
+    <string>8.0</string>
     <key>CFBundleDisplayName</key>
     <string>Golfnow</string>
     <key>CFBundleIdentifier</key>
@@ -33,6 +33,10 @@
     <string>Golfnow</string>
     <key>XSAppIconAssets</key>
     <string>Assets.xcassets/AppIcon.appiconset</string>
+    <key>UIAppFonts</key>
+    <array>
+      <string>iconfont01.ttf</string>
+    </array>
   </dict>
 </plist>
 
